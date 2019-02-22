@@ -1,5 +1,6 @@
 const hackerData = require("./data/hackers.json");
 const bodyParser = require("body-parser");
+const authentication = require("./middleware/authentication");
 const express = require("express");
 
 // * Definitions
@@ -10,6 +11,7 @@ const port = process.env.PORT || 8080;
 
 // * Middleware
 
+app.use(authentication.validateAPIKey);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/api", router);
