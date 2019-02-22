@@ -1,11 +1,16 @@
 const validateAPIKey = (req, res, next) => {
-  console.log(req.headers);
-  console.log(req.headersapiKey);
+  console.log(req.query);
+  // console.log(req.headersapiKey);
 
-  const apiKey = process.env.APIKEY || "clipper";
+  const apiKey = process.env.APIKEY || "DEV_KEY";
 
-  if (req.headersapiKey !== apiKey) {
-    res.code = 401;
+  console.log(req.query.authorization);
+  console.log(apiKey);
+  console.log(req.query.authorization === apiKey);
+
+  if (req.query.authorization != apiKey) {
+    //res.code = 401;
+    // res.setHeader("code", 401);
     res.json({
       code: 401,
       error: true,

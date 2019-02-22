@@ -11,7 +11,7 @@ const port = process.env.PORT || 8080;
 
 // * Middleware
 
-app.use(authentication.validateAPIKey);
+//app.use(authentication.validateAPIKey);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/api", router);
