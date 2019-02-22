@@ -1,6 +1,6 @@
-const hackerData = require("./data/hackers.json");
+const hackerData = require("./src/data/hackers.json");
 const bodyParser = require("body-parser");
-const authentication = require("./middleware/authentication");
+const authentication = require("./src/middleware/authentication");
 const express = require("express");
 
 // * Definitions
