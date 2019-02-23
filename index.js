@@ -38,7 +38,7 @@ router.get("/:id?", (req, res) => {
     res.json({
       code: 404,
       count: 0,
-      results: null
+      results: {}
     });
   }
 
