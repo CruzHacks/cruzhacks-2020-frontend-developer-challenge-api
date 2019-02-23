@@ -34,7 +34,7 @@ router.get("/:id?", (req, res) => {
   const argued_id = req.params.id;
 
   if (argued_id < 0 || argued_id > hackerData.length - 1) {
-    res.status = 404;
+    res.status(404);
     res.json({
       code: 404,
       count: 0,

@@ -9,8 +9,7 @@ const validateAPIKey = (req, res, next) => {
   console.log(req.query.authorization === apiKey);
 
   if (req.query.authorization != apiKey) {
-    //res.code = 401;
-    // res.setHeader("code", 401);
+    res.status(401);
     res.json({
       code: 401,
       error: true,
