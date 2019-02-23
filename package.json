@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build-image": "docker build -t kyleobrien1668/kyleobrien.io:latest --no-cache .",
+    "publish-image": "docker push kyleobrien1668/cruzhacks-demo-hacker-api:latest",
+    "deploy-prod": "npm run build-image && npm run publish-image"
   },
   "keywords": [],
   "author": "",
